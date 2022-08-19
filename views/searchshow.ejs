@@ -1,0 +1,71 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+<head>
+    <link rel="stylesheet" href="css/showsearch.css">
+</head>
+<h1 class="first">Results</h1>
+<%if(dishes.length!=0){%>
+    <div class="recipe-box">
+        <%for (let i=0; i < dishes.length; i++) {%>
+            <div class="content-box">
+                <div class="content">
+                    <div class="heading">
+                        <%= dishes[i].dishName%>
+                    </div>
+                    <div class="autorName">
+                        Chef: 
+                        <strong>
+                            <%= dishes[i].name%>
+                        </strong>
+                    </div>
+                <a href="/showRecipe/<%= dishes[i]._id%>">View Recipe</a>
+                </div>
+            </div>
+        <%}%>
+    </div>
+<%}%>
+<%if(authors.length!=0){%>
+    <h1>by chefs</h1>
+    <div class="recipe-box">
+        <%for (let i=0; i < authors.length; i++) {%>
+            <div class="content-box">
+                <div class="content">
+                    <div class="heading">
+                        <%= authors[i].dishName%>
+                    </div>
+                    <div class="autorName">
+                        Chef: 
+                        <strong>
+                            <%= authors[i].name%>
+                        </strong>
+                    </div>
+                <a href="/showRecipe/<%= authors[i]._id%>">View Recipe</a>
+                </div>
+            </div>
+        <%}%>
+    </div>
+<%}%>
+<%if(tags.length!=0){%>
+    <h1>related taged recipe</h1>
+    <div class="recipe-box">
+        <%for (let i=0; i < tags.length; i++) {%>
+            <div class="content-box">
+                <div class="content">
+                    <div class="heading">
+                        <%= tags[i].dishName%>
+                    </div>
+                    <div class="autorName">
+                        Chef: 
+                        <strong>
+                            <%= tags[i].name%>
+                        </strong>
+                    </div>
+                <a href="/showRecipe/<%= tags[i]._id%>">View Recipe</a>
+                </div>
+            </div>
+        <%}%>
+    </div>
+<%}%>
+
+
+<%- include('./partials/footer.ejs') %>

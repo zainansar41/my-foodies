@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+<head>
+    <link rel="stylesheet" href="css/category.css">
+</head>
+<%if(result.length!=0){%>
+    <h1><%= category%></h1>
+    <div class="recipe-box">
+        <%for (let i=0; i < result.length; i++) {%>
+            <div class="content-box">
+                <div class="content">
+                    <div class="heading">
+                        <%= result[i].dishName%>
+                    </div>
+                    <div class="autorName">
+                        Chef: 
+                        <strong>
+                            <%= result[i].name%>
+                        </strong>
+                    </div>
+                <a href="/showRecipe/<%= result[i]._id%>">View Recipe</a>
+                </div>
+            </div>
+        <%}%>
+    </div>
+<%}else{%>
+    <div class="oops">
+        sorry <br>No such Items find
+    </div>
+<%}%>
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,54 @@
+<%- include('./partials/header.ejs') %>
+<head><link rel="stylesheet" href="css/sinupLogin.css"></head>
+<body>
+    <div class="containor">
+        <div class="form-box">
+            <div class="button">
+                <div id="btn"></div>
+                <!-- <button type="button" class="toogle">login</button> -->
+                <button type="button" class="toogle">register</button>
+            </div>
+            <div class="social">
+                <img src="images/fb.png" alt="error">
+                <img src="images/ins.png" alt="error">
+                <img src="images/tw.jfif" alt="error">
+            </div>
+            <form action="/sinup" method="post">
+                <div class="inputf">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="enter your name" required>
+                </div>
+                <div class="inputf">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" placeholder="enter your email" required>
+                </div>
+                <div class="pass inputf">
+                    <i class="fas fa-key"></i>
+                    <input type="password" name="password" placeholder="enter your password" required>
+                </div>
+                <div class="text">already have an account? <a href="login.html">click here</a></div>
+                <div class="button1 inputf">
+                    <button type="submit">register</button>
+            </form>
+                <!-- <input type="submit" > -->
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+    
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login() {
+            x.style.left = "50";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+    </script>
+</body>
+</html>

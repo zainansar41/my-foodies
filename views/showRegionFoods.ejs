@@ -1,0 +1,79 @@
+<%- include('./partials/header.ejs') %>
+    <%- include('./partials/navbar.ejs') %>
+
+        <head>
+            <link rel="stylesheet" href="css/showRegionFoods.css">
+        </head>
+
+        <div class="show-recipeRegion">
+            <div class="Recipe">
+                <h1>
+                    <%=cname %>
+                </h1>
+                <h2>Classic</h2>
+                <div class="recipe-box">
+                        <%for (let i=0; i < 5; i++)
+                            {%>
+                                <% var random=Math.floor(Math.random() * result.length)%>
+                                <% if(result[random].category==="Classic"){ %>
+                                    <div class="content-box">
+                                        <div class="content">
+                                            <div class="heading">
+                                                <%= result[random].dishName%>
+                                            </div>
+                                            <div class="autorName">
+                                                Chef: <strong><%= result[random].name%></strong>
+                                            </div>
+                                            <a href="/showRecipe/<%= result[random]._id%>">View Recipe</a>
+                                        </div>
+                                    </div>
+                                <% } else{ i-- }%>
+                            <% } %>
+                               
+                </div>
+                <h2>Fast Food</h2>
+                <div class="recipe-box">
+                    <%for (let i=0; i < 5; i++)
+                            {%>
+                                <% var random=Math.floor(Math.random() * result.length)%>
+                                <% if(result[random].category==="Fast Food"){ %>
+                                    <div class="content-box">
+                                        <div class="content">
+                                            <div class="heading">
+                                                <%= result[random].dishName%>
+                                            </div>
+                                            <div class="autorName">
+                                                Chef: <strong><%= result[random].name%></strong>
+                                            </div>
+                                            <a href="/showRecipe/<%= result[random]._id%>">View Recipe</a>
+                                        </div>
+                                    </div>
+                                <% } else{ i-- }%>
+                            <% } %>
+                    
+                </div>
+                <h2>Dessets</h2>
+                <div class="recipe-box">
+                    <%for (let i=0; i < 5; i++)
+                            {%>
+                                <% var random=Math.floor(Math.random() * result.length)%>
+                                <% if(result[random].category==="Dessert"){ %>
+                                    <div class="content-box">
+                                        <div class="content">
+                                            <div class="heading">
+                                                <%= result[random].dishName%>
+                                            </div>
+                                            <div class="autorName">
+                                                Chef: <strong><%= result[random].name%></strong>
+                                            </div>
+                                            <a href="/showRecipe/<%= result[random]._id%>">View Recipe</a>
+                                        </div>
+                                    </div>
+                                <% } else{ i-- }%>
+                            <% } %>
+                    
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>

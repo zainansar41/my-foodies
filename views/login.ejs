@@ -1,0 +1,34 @@
+<%- include('./partials/header.ejs') %>
+<head><link rel="stylesheet" href="css/sinupLogin.css"></head>
+
+<body>
+    <div class="containor">
+        <div class="form-box">
+            <div class="button">
+                <div id="btn"></div>
+                <button type="button" class="toogle">    Log_in</button>
+            </div>
+            <div class="social">
+                <img src="images/fb.png" alt="error">
+                <img src="images/ins.png" alt="error">
+                <img src="images/tw.jfif" alt="error">
+            </div>
+            <form action="/login" method="post">
+                <div class="inputf">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="enter your name" required>
+                </div>
+                <div class="pass inputf">
+                    <i class="fas fa-key"></i>
+                    <input type="password" name="password" placeholder="enter your password" required>
+                </div>
+                <div class="text"><a href="#">forgot password</a></div>
+                <div class="button1 inputf">
+                    <button type="submit">login</button>
+                </div>
+            </form>
+            <div class="text">don't you have an account? <a href="/sinupPage">click here to register</a></div>
+        </div>
+    </div>
+</body>
+</html>

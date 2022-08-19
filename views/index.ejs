@@ -1,0 +1,98 @@
+<%- include('./partials/header.ejs') %>
+    <%- include('./partials/navbar.ejs') %>
+
+        <head>
+            <link rel="stylesheet" href="css/index.css">
+        </head>
+        <div class="main">
+            <div class="background">
+                <img src="images/logo.jpeg" alt="">
+                <div class="heading">Let's Cook Together</div>
+            </div>
+        </div>
+
+        <div class="region">
+            <h2>Food By Region</h2>
+            <div class="food">
+                <a href="/showRegionFoods/american">
+                    <img src="images/american-food.jpg" alt="" style="width: 200px;">
+                </a>
+                <a href="/showRegionFoods/indian">
+                    <img src="images/indian-food.jpg" alt="" style="width: 200px;">
+                </a>
+                <a href="/showRegionFoods/pakistani">
+                    <img src="images/desserts.jpg" alt="" style="width: 200px;">
+                </a>
+                <a href="/showRegionFoods/chinese">
+                    <img src="images/chinese-food.jpg" alt="" style="width: 200px;">
+                </a>
+                <a href="/showRegionFoods/viewAll">
+                    <img src="images/view-all.jpg" alt="" style="width: 200px;">
+                </a>
+            </div>
+        </div>
+        <div class="Recipe">
+            <h2>Classic</h2>
+            <div class="recipe-box">
+                <%for (let i=0; i < 5; i++) {%>
+                    <% var random=Math.floor(Math.random() * classic.length)%>
+                        <div class="content-box">
+                            <div class="content">
+                                <div class="heading">
+                                    <%= classic[random].dishName%>
+                                </div>
+                                <div class="autorName">
+                                    Chef: <strong>
+                                        <%= classic[random].name%>
+                                    </strong>
+                                </div>
+                                <a href="/showRecipe/<%= classic[random]._id%>">View Recipe</a>
+                            </div>
+                        </div>
+                    <% } %>
+            </div>
+        </div>
+        <div class="Recipe">
+            <h2>Fast Food</h2>
+            <div class="recipe-box">
+                <%for (let i=0; i < 5; i++) {%>
+                    <% var random=Math.floor(Math.random() * fastfood.length)%>
+                        <div class="content-box">
+                            <div class="content">
+                                <div class="heading">
+                                    <%= fastfood[random].dishName%>
+                                </div>
+                                <div class="autorName">
+                                    Chef: <strong>
+                                        <%= fastfood[random].name%>
+                                    </strong>
+                                </div>
+                                <a href="/showRecipe/<%= fastfood[random]._id%>">View Recipe</a>
+                            </div>
+                        </div>
+                        <% } %>
+            </div>
+        </div>
+        <div class="Recipe">
+            <h2>Desserts</h2>
+
+            <div class="recipe-box">
+                <%for (let i=0; i < 5; i++) {%>
+                    <% var random=Math.floor(Math.random() * desserts.length)%>
+                        <div class="content-box">
+                            <div class="content">
+                                <div class="heading">
+                                    <%= desserts[random].dishName%>
+                                </div>
+                                <div class="autorName">
+                                    Chef: <strong>
+                                        <%= desserts[random].name%>
+                                    </strong>
+                                </div>
+                                <a href="/showRecipe/<%= desserts[random]._id%>">View Recipe</a>
+                            </div>
+                        </div>
+                        <% } %>
+            </div>
+        </div>
+        <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+<head><link rel="stylesheet" href="css/showRecipe.css"></head>
+<div class="show-recipe">
+    <div class="img">
+        <img src="images/showRecipe.jpg" alt="" srcset="">
+    </div>
+    <div class="show">
+        <% var j=result.ingredients%>
+        <h1><%= result.dishName %></h1>
+        <h3><%= result.name%></h3>
+        <ul>
+            <h4 class="ingredients">ingredients</h4>
+            <% for(var i = 0; i < j.length; i++) { %> 
+                <li><%= result.ingredients[i]%></li>
+              <% } %>
+        </ul>
+        <div class="recipe">
+            <h4>Proccess</h4>
+            <%= result.recipe%>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

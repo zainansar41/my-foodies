@@ -1,0 +1,76 @@
+<%- include('./partials/header.ejs') %>
+    <head><link rel="stylesheet" href="css/uploadRecipe.css"></head>
+<body>
+    <div class="container">
+        <div class="title">New Recipe</div>
+        <div class="content">
+            <form action="/uploadRecipe" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Username</span>
+                        <input type="text" name="name" placeholder="Enter your username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Dish name</span>
+                        <input type="text" name="dishName" placeholder="Dish name" required>
+                    </div>
+                    <div class="input-box ingredients">
+                        <span class="details">Ingredients</span>
+                        <input type="text" name="ingredients" placeholder="onion: 2, tomato: 200g,  ...." required>
+                    </div>
+                    <div class="input-box recipe">
+                        <span class="details">Recipe</span>
+                        <textarea name="recipe" id="recipe" placeholder="how to make it"></textarea>
+                    </div>
+                    <div class="input-box ingredients">
+                        <span class="details">Tags</span>
+                        <input type="text" name="tags" placeholder="Tags: thai, cakes, easytomake...." required>
+                    </div>
+                </div>
+                <div class="category-details">
+                    <input type="radio" name="category" id="dot-1" value="Classic">
+                    <input type="radio" name="category" id="dot-2" value="Fast Food">
+                    <input type="radio" name="category" id="dot-3" value="Dessert">
+                    <span class="category-title">category</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="category">Classic</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="category">Fast Food</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="category">Dessert</span>
+                        </label>
+                    </div>
+                </div>
+                <label for="select-Region">select Region</label>
+                <div  class="select">
+                    <select name="region" id="select-Region" required>
+                        <option  value="American">American</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Pakistani">Pakistani</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <span class="focus"></span>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Upload Recipe">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

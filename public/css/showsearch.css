@@ -1,0 +1,102 @@
+h1{
+
+    font-family: 'DynaPuff';
+    text-align: center;
+    margin-bottom: 40px;
+}
+.first{
+    padding-top: 100px;
+}
+
+.recipe-box{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin-bottom: 40px;
+}
+.content-box{
+    width: 200px;
+    min-height: 250px;
+    background: gray;
+    border-radius: 10px;
+    transition: .5s ease;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+.content-box:hover{
+    border-radius: 15px;
+    box-shadow: 5px 5px black;
+    background: red;
+    
+}
+.content-box:nth-child(even){
+    background: red;
+    color:white;
+}
+.content-box:nth-child(even):hover{
+    background: gray;
+}
+.content-box .content{
+    position: relative;
+    transition: .5s ease;
+}
+.content-box:hover .content{
+    scale: 1.05;
+    color: white;  
+}
+.content-box:nth-child(even):hover .content{
+    color: black;
+}
+.content-box .heading{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 13px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.content-box .autorName{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.content-box a{
+    position: absolute;
+    right: 0;
+    padding: 10px ;
+    background: red;
+    color: white;
+    transition: .5s ease;
+}
+.content-box:hover a{
+    scale: .92;
+    color: black;
+    background: gray;
+}
+.content-box:nth-child(even) a{
+    background: gray;
+}
+.content-box:nth-child(even):hover a{
+    background: red;
+}
+@media (max-width:1000px){
+    .recipe-box{
+         grid-template-columns: auto auto auto auto;
+    }
+}
+@media (max-width:900px){
+    .recipe-box{
+         grid-template-columns: auto auto auto;
+    }
+}
+@media (max-width:650px){
+    .recipe-box{
+         grid-template-columns: auto auto;
+    }
+    .content-box {
+        margin-left: 17px;
+    }
+}
+@media (max-width:650px){
+    .content-box {
+        width: 170px;
+        height: 220px;
+    }
+}
