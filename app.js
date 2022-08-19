@@ -11,7 +11,7 @@ const app= express();
 const port=process.env.PORT ;
 const {join}=require('path');
 const router = require('./router/web');
-const URI=process.env.URI || 3030
+const URI=process.env.URI
 
 mongoose.connect(URI,
     { useNewUrlParser: true, useUnifiedTopology: true }, err => {
